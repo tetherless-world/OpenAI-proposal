@@ -8,15 +8,23 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
             color: #333;
+            background-color: #ffffff;
         }
         h1 {
             color: #2c3e50;
             border-bottom: 2px solid #3498db;
             padding-bottom: 10px;
+            text-align: center;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
         }
         .container {
             background-color: #f9f9f9;
@@ -24,13 +32,301 @@
             border-radius: 5px;
             margin-top: 20px;
         }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .team-member {
+            background-color: #ffffff;
+            border: 1px solid #ecf0f1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .team-photo {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 60px;
+            overflow: hidden;
+        }
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .team-info {
+            padding: 20px;
+        }
+        .team-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        .team-role {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-bottom: 12px;
+        }
+        .team-bio {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .team-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+        .team-links a {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+        .team-links a:hover {
+            background-color: #2980b9;
+        }
+        .references {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .references ul {
+            list-style-position: inside;
+            padding: 0;
+        }
+        .references li {
+            margin-bottom: 10px;
+        }
+        .references a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .references a:hover {
+            text-decoration: underline;
+        }
+        .org-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .org-card {
+            background-color: #ffffff;
+            border: 1px solid #ecf0f1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .org-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .org-logo {
+            width: 100%;
+            height: 150px;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 60px;
+            overflow: hidden;
+        }
+        .org-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .org-info {
+            padding: 20px;
+            text-align: center;
+        }
+        .org-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+        .org-description {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .org-link {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .org-link:hover {
+            background-color: #2980b9;
+        }
     </style>
 </head>
 <body>
     <h1>OpenAI Proposal</h1>
+    
+    <!-- Overview Section -->
+    <h2>Overview</h2>
     <div class="container">
-        <p>Welcome to the OpenAI Proposal GitHub Pages site.</p>
-        <p>This page is hosted using GitHub Pages and automatically deployed via GitHub Actions.</p>
+        <p>Large language models are increasingly used to answer questions related to mental health, yet they often operate without grounding in validated instruments, structured evidence, or clear semantic constraints. This creates risks of inaccurate, misleading, or context-insensitive responses, particularly in domains involving psychological constructs, assessments, and clinical evidence. This project investigates whether knowledge graphs and ontologies can provide a practical and effective constraint layer for guiding LLM behavior, reducing common failure modes while preserving conversational usability.</p>
+        <p>Building on an existing knowledge graph developed under an NIMH-funded project, the research will expand semantic, evidence, and provenance modeling and integrate this infrastructure into a controlled conversational AI prototype. Using a curated set of mental health–related queries, we will systematically analyze errors and risks that arise when LLMs respond without grounding, and compare them to responses generated with knowledge graph constraints. This approach enables empirical evaluation of how structured evidence influences accuracy, contextual sensitivity, transparency, and safety.</p>
+        <p>The project will produce a grounded prototype, a taxonomy of ungrounded failure modes, and empirical results comparing grounded and ungrounded AI behavior. Together, these outcomes will provide actionable insights into when and how semantic infrastructure can meaningfully improve mental health AI systems. The findings will inform future system design, evaluation standards, and responsible deployment practices for AI technologies operating in mental health contexts.</p>
+        <p>The project is led by a multidisciplinary team with expertise in knowledge graphs, hybrid AI, psychometrics, and mental health research. Prior work includes peer-reviewed publications, presentations, and the development of the Psychometric Ontology of Experiences and Measures (POEM). This work has resulted in an initial NIMH-funded knowledge graph capturing validated mental health screening instruments, their semantics, versions, and associated evidence, as well as a large database of real world email inquiries from RCADS users. Together, these existing resources place the team in a strong position to efficiently achieve the project’s goals and to focus on evaluating and operationalizing knowledge graph–grounded AI behavior rather than building infrastructure from scratch.</p>
+    </div>
+
+    <!-- Team Section -->
+    <h2>Team</h2>
+    <div class="team-grid">
+        <!-- Team Member 1 -->
+        <div class="team-member">
+            <div class="team-photo">
+                <img src="img/dlm.webp" alt="Deborah L. McGuinness">
+            </div>
+            <div class="team-info">
+                <div class="team-name">Deborah L. McGuinness, PhD</div>
+                <div class="team-role">Principal Investigator, AI</div>
+                <div class="team-bio">Professor of Computer and Cognitive Science at the Rensselaer Polytechnic Institute and globally recognized authority in ontology engineering, semantic technologies, and hybrid AI.</div>
+                <div class="team-links">
+                    <a href="https://tw.rpi.edu/person/Deborah_L_McGuinness" title="Homepage">🏠︎</a>
+                    <a href="https://www.linkedin.com/in/deborah-mcguinness-088167/" title="LinkedIn">[in]</a>
+                    <a href="https://scholar.google.com/citations?user=PLJ0L4QAAAAJ&hl=en" title="Google Scholar">🎓</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="team-member">
+            <div class="team-photo">
+                <img src="img/bfc.jpeg" alt="Bruce F. Chorpita">
+            </div>
+            <div class="team-info">
+                <div class="team-name">Bruce F. Chorpita, PhD</div>
+                <div class="team-role">Co-Principal Investigator, Mental Health</div>
+                <div class="team-bio">Professor of Psychology and Psychiatry and Biobehavioral Sciences at the University of California, Los Angeles who has demonstrably improved youth mental health systems at scale in various academic and governmental leadership positions.</div>
+                <div class="team-links">
+                    <a href="https://www.psych.ucla.edu/faculty-page/chorpita/" title="Homepage">🏠︎</a>
+                    <a href="https://www.linkedin.com/in/bruce-chorpita/" title="LinkedIn">[in]</a>
+                    <a href="https://scholar.google.com/citations?hl=en&user=5QWukW8AAAAJ" title="Google Scholar">🎓</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="team-member">
+            <div class="team-photo">
+                <img src="img/hs.webp" alt="Henrique Santos">
+            </div>
+            <div class="team-info">
+                <div class="team-name">Henrique Santos, PhD</div>
+                <div class="team-role">AI Researcher</div>
+                <div class="team-bio">Director of Semantic Applications Research at Rensselaer Polytechnic Institute with expertise in knowledge representation, reasoning, and hybrid AI.</div>
+                <div class="team-links">
+                    <a href="https://tw.rpi.edu/person/HenriqueSantos" title="Homepage">🏠︎</a>
+                    <a href="https://www.linkedin.com/in/henrique-o-santos/" title="LinkedIn">[in]</a>
+                    <a href="https://scholar.google.com/citations?user=Aqdsf6kAAAAJ&hl=en" title="Google Scholar">🎓</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="team-member">
+            <div class="team-photo">
+                <img src="img/es.jpg" alt="Eliza Swindell">
+            </div>
+            <div class="team-info">
+                <div class="team-name">Eliza Swindell, MSc</div>
+                <div class="team-role">Research (To update)</div>
+                <div class="team-bio">(To update)</div>
+                <div class="team-links">
+                    <a href="http://www.linkedin.com/in/eliza-swindell-34bb61232/" title="LinkedIn">[in]</a>
+                    <a href="https://scholar.google.com/citations?user=dYaju6wAAAAJ&hl=en" title="Google Scholar">🎓</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Organizations Section -->
+    <h2>Organizations</h2>
+    <div class="org-grid">
+        <!-- Organization 1 -->
+        <div class="org-card">
+            <div class="org-logo">
+                <img src="img/twc.png" alt="Tetherless World Constellation">
+            </div>
+            <div class="org-info">
+                <div class="org-name">Tetherless World Constellation</div>
+                <div class="org-description">Multidisciplinary research institution at Rensselaer Polytechnic Institute that focuses on the study of theories, methods and applications of the World Wide Web.</div>
+                <a href="https://tw.rpi.edu" class="org-link" target="_blank">Visit Website</a>
+            </div>
+        </div>
+
+        <!-- Organization 2 -->
+        <div class="org-card">
+            <div class="org-logo">
+                <img src="img/cf.png" alt="Child FIRST">
+            </div>
+            <div class="org-info">
+                <div class="org-name">Child FIRST</div>
+                <div class="org-description">Clinical science research laboratory at University of California, Los Angeles dedicated to improving the effectiveness of mental health services delivered to youth and their families.</div>
+                <a href="https://www.childfirst.ucla.edu" class="org-link" target="_blank">Visit Website</a>
+            </div>
+        </div>
+
+        <!-- Organization 3 -->
+        <div class="org-card">
+            <div class="org-logo">
+                <img src="img/rcads.png" alt="RCADS">
+            </div>
+            <div class="org-info">
+                <div class="org-name">RCADS</div>
+                <div class="org-description">Collection of self-report and parent-report instruments designed to measure anxiety and depression in youth between the ages of 8 and 18.</div>
+                <a href="https://rcads.ucla.edu" class="org-link" target="_blank">Visit Website</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- References Section -->
+    <h2>Prior Work</h2>
+    <div class="references">
+        <ul>
+            <li>Chorpita, B.F., Becker, K.D., De Los Reyes, A., Ovalle Patino, E., Machle, C.J., McGuinness, D.L., Reise, S.P., Rook, K., Santos, H., Spence, S.H., Swindell, E. 2026. Organizing the World’s Psychological Questionnaires: Pursuing Evidence-Based Assessment Through Better Knowledge Engineering. Clinical Psychology: Science and Practice. Under review.</li>
+            <li>Shafran, R., Bond, L., Carlbring, P., Cohen, Z., Creed, T.A., Davey, E., Egan, S.J., Freeman, D., Hollon, S.D., Jacobson, N.C., Johnson, C., Kaysen, D., McGuinness, D.L., Patel, V., Pozuelo, J.R., Santos, H., Singla, D.R., Stirman, S.W., Taylor, D., Wade, T.D. 2025. From Innovation to Implementation: Artificial Intelligence in Cognitive Behavior Therapy Training and Supervision. Behaviour Research and Therapy. To appear.</li>
+            <li>Rook, K., Santos, H., McGuinness, D.L., Sprung, M.S., Pinheiro, P., Chorpita, B.F. 2025. <a href="https://doi.org/10.4230/TGDK.3.3.3" target="_blank">Supporting Psychometric Instrument Usage through the POEM Ontology.</a> Transactions on Graph Data and Knowledge 3(3).</li>
+            <li>Rook, K., Santos, H., Chorpita, B.F., Sprung, M.S., Pinheiro, P., McGuinness, D.L. 2024. <a href="https://dspace.rpi.edu/items/609d1f68-9f15-4c27-ad04-52d9147222a6" target="_blank">Towards an Ontology of Psychometric Measures.</a> In The Healthcare and Life Sciences Symposium (HCLS), co-located with The 2024 Knowledge Graph Conference (KGC). New York, NY.</li>
+            <li>Sprung, M.S., Santos, H., Rook, K., Pinheiro, P., McGuinness, D.L., Chorpita, B.F. 2024. <a href="https://dspace.rpi.edu/items/9ff847b9-40ef-418c-80d5-2425c9510981" target="_blank">Psychometric Assessment Issues and Potential Opportunities.</a> In The Healthcare and Life Sciences Symposium (HCLS), co-located with The 2024 Knowledge Graph Conference (KGC). New York, NY.</li>
+            <li>Rook, K., Santos, H., Sprung, M.S., McGuinness, D.L., Chorpita, B.F. 2024. Semantic Modeling of Evidence for Psychometric Instrument Usage. Annual MCBK Global Meeting.</li>
+            <li>Santos, H., Rook, K., Pinheiro, P., Chorpita, B.F., McGuinness, D.L., 2023. <a href="https://dspace.rpi.edu/items/ca73de16-d821-4e4d-b07c-d98790c3b4ba" target="_blank">Facilitating Reuse of Mental Health Questionnaires via Knowledge Graphs.</a> In The Healthcare and Life Sciences Symposium (HCLS), co-located with The 2023 Knowledge Graph Conference (KGC). New York, NY.</li>
+        </ul>
     </div>
 </body>
 </html>
